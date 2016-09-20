@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Onetree Test Suite</title>
+  <style type="text/css">
+  </style>
+  <link type="text/css" rel="stylesheet" href="jsweather/jlauweather.css" />
+  <script src="jsweather/jquery.min.js"></script>
+  <script src="jsweather/jquery.jlauweather.js"></script>
+  
+  <script src="jsweather/datouwang.js"></script>
+   <link href="jsweather/weather.css" rel="stylesheet" type="text/css">
+   </link>
+</head>
+
+<body onload="initial();doloadWeather();">
+  <div id="templture" style="width: 320px;height: 354px;position: relative;">
+       <div id="m_date" style="display:none;height: 100%;width: 100%;position: absolute;z-index:999;background: #FFFFFF;">
+       <!-- 代码 开始 -->
+<form name="CLD" class="content">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="datetable">
+    <thead>
+    <tr>
+      <td colSpan=7><span>公历</span>
+        <select name="SY" onchange="changeCld();" style="font-SIZE: 7pt">
+        <script>
+            for(i=1900;i<2050;i++) document.write('<option>'+i);
+        </script>
+         </select><span>年</span>
+         <select name="SM" onchange="changeCld();" style="font-SIZE: 7pt">
+        <script>
+            for(i=1;i<13;i++) document.write('<option>'+i);
+        </script>
+        </select><span>月</span>
+       </font><span id="GZ"></span>
+        <span id="date_close">关闭</span>
+      </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr style="background:#eee;">
+      <td width="54">日</td>
+      <td width="54">一</td>
+      <td width="54">二</td>
+      <td width="54">三</td>
+      <td width="54">四</td>
+      <td width="54">五</td>
+      <td width="54">六</td>
+    </tr>            
+    <script>
+    var gNum;
+    for(i=0;i<6;i++) {
+       document.write('<tr align="center">');
+       for(j=0;j<7;j++) {
+          gNum = i*7+j;
+          document.write('<td id="GD' + gNum +'"><font id="SD' + gNum +'" size=2 face="Arial Black"');
+          if(j == 0) document.write('color="red"');
+          if(j == 6) document.write('color="#000080"');
+          document.write('></font><br/><font id="LD' + gNum + '" size=2 style="font-size:9pt"></font></td>');
+       }
+       document.write('</tr>');
+       $('#date_close').on('click',function(){
+       	 $('#m_date').css('display','none');
+       });
+    }
+   </script>
+   </tbody>
+</table>
+</form>
+<!-- 代码 结束 -->
+</div>
+      <div id="onetree" style="width: 100%;height: 100%;box-sizing: border-box;">
+      </div>
+  </div>
+  <script>
+  
+    //23459862  dab4bdfc6b9de5b7323d12ea3fafe6ec
+   function doloadWeather()
+   {
+   	$.get("http://ali-weather.showapi.com/ip-to-weather?ip=223.5.5.5&need3HourForcast=0&needAlarm=0&needHourData=0&needIndex=0&needMoreDay=0&AppKey=23461420&AppSecret=4a28307fa0c82e8a2990be8d3f72c963",function(data,status){
+    	 alert(data);
+    });
+   }
+    
+  
+    $('#onetree').jlauweather({
+      data:{
+          bgImgUrl: 'http://img1.3lian.com/2015/w7/90/d/3.jpg',
+          city: '北京',
+          airQuality: '优',
+          weatherImg: 'http://app1.showapi.com/weather/icon/day/01.png',
+          temperature: '12-30 多云转晴',
+          lunarTerm: '秋至',
+          date: new Date(),
+          remark: '酷暑夏天，水份蒸发得特别快,旺盛生长的作物更加需要水。真是小暑雨如..大暑雨如金'
+      }
+    });
+    $.jlauweather.update(
+      {
+          bgImgUrl: '',
+          city: 'sdf',
+          airQuality: 'sdf',
+          weatherImg: 'sdf',
+          temperature: 'sdf',
+          lunarTerm: 'sdf',
+          date: new Date(),
+          remark: 'sdf'
+    });
+  </script>
+</body>
+
+</html>

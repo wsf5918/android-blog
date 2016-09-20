@@ -1,0 +1,84 @@
+.overview *{
+  margin: 0;
+  padding: 0;
+}    
+.overview {
+  width: 100%;
+  padding: 16px 0px;
+  background-image: url(/assets/img/20160822/e2d48423369d1fb3401e1c4623cf16d7.jpg);
+  background-size: 100% 100%;
+  color: #fff;
+  filter: blur(1px);
+  filter: progid:dximagetransform.microsoft.blur(PixelRadius=1, MakeShadow=false);
+}
+.overview:hover{
+  filter: none;
+}
+.overview i {
+  font-style: normal;
+}
+.overview .head{
+  padding: 0 18px;
+}
+.overview .head img {
+  width: 3em;
+  height: 2.5em;
+  padding: .3em 0.1em;
+}
+.overview .head div:first-child {
+  float: left;
+}
+.overview .head i {
+  background-color: blue;
+}
+.overview .head .weather {
+  display: inline-block;
+  font-size: 1.2em;
+  vertical-align: top;
+  padding-top: 0.6em;
+}
+.overview .detail {
+  text-align: center;
+  padding: 1.8em 0;
+}
+.overview .detail .content {
+  margin-left: 50%;
+  transform: translatex(-50%);
+  width: 8em;
+  height: 8em;
+  border-radius: 4em;
+  background-color: green;
+}
+.overview .detail .content p {
+  font-size: 4em;
+  line-height: .8;
+  padding-top: .4em;
+}
+.overview .detail .remark {
+  position: absolute;
+  left: 80%;
+  width: 1em;
+  height: 3em;
+  font-size: 1.5em;
+  padding-top: 1em;
+}
+.overview .detail i {
+  font-size: 1.5em;
+}
+.overview .detail .calendar {
+  position: absolute;
+  margin-top: .3em;
+  margin-left: .5em;
+  font-size: 1em;
+  padding: .1em;
+  background-color: red;
+}
+.notice{
+  padding: 0 18px;
+}
+.notice_title{
+	font-size: 1em;
+}
+.notice_content{
+	font-size: .6em;
+}
